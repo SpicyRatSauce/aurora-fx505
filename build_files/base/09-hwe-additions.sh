@@ -11,6 +11,10 @@ else
     exit 0
 fi
 
+# Asus Linux Kernel
+curl --retry 3 -Lo /etc/yum.repos.d/_copr_lukenukem-asus-kernel.repo \
+    https://copr.fedorainfracloud.org/coprs/lukenukem/asus-kernel/repo/fedora-$(rpm -E %fedora)/lukenukem-asus-kernel-fedora-$(rpm -E %fedora).repo
+
 # Asus/Surface for HWE
 curl --retry 3 -Lo /etc/yum.repos.d/_copr_lukenukem-asus-linux.repo \
     https://copr.fedorainfracloud.org/coprs/lukenukem/asus-linux/repo/fedora-$(rpm -E %fedora)/lukenukem-asus-linux-fedora-$(rpm -E %fedora).repo
@@ -21,6 +25,8 @@ curl --retry 3 -Lo /etc/yum.repos.d/linux-surface.repo \
 ASUS_PACKAGES=(
     asusctl
     asusctl-rog-gui
+    kernel-rog-cachyos
+    kernel-rog-cachyos-devel-matched
 )
 
 SURFACE_PACKAGES=(

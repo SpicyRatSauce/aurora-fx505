@@ -22,4 +22,7 @@ dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/te
 # Enable sunshine repo
 dnf5 -y copr enable lizardbyte/beta
 
+# Enable asus kernel copr
+dnf5 -y copr enable lukenukem/asus-kernel 
+
 echo "::endgroup::"
